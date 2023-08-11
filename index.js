@@ -19,6 +19,7 @@ let stopMusic = (ele) => {
 let playMusic = (musicUrl) => {
     if ((currentMusic !== null) && (currentMusic.src.slice(22, ) === musicUrl)){
         // console.log(currentMusic)
+        console.log(currentMusic + " This is currentMusic Val in first if");
         currentMusic.pause();
         console.log("paused");
         tempMusic = currentMusic;
@@ -29,11 +30,15 @@ let playMusic = (musicUrl) => {
         return;
     }
     if (currentMusic) {
+        console.log(currentMusic + " This is currentMusic Val in second if");
+
         stopMusic(currentMusic);
     }
     else if ((tempMusic  !==  null) && tempMusic.src.slice(22, ) === musicUrl){
         tempMusic.play();
         // console.log("tempMusic");
+        console.log(tempMusic + " This is tempMusic Val");
+
         let opt = tempMusic.src.split("/").pop().split(".")[0];
         document.querySelector(`.i${opt}`).classList.add("fa-circle-pause");
         document.querySelector(`.i${opt}`).classList.remove("fa-circle-play");
@@ -43,6 +48,7 @@ let playMusic = (musicUrl) => {
     }
         currentMusic = new Audio(musicUrl);
         currentMusic.play();
+        console.log(currentMusic + " This is currentMusic Val");
         // Change the play button icon to "pause" when the song starts playing
         let opt = musicUrl.split("/").pop().split(".")[0];
         console.log(opt);
