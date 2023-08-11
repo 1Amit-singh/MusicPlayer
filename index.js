@@ -18,11 +18,11 @@ let stopMusic = (ele) => {
 
 let playMusic = (musicUrl) => {
     console.log(musicUrl)
-    if ((currentMusic !== null) && (currentMusic.src.slice(-19, )  === musicUrl)){
+    if ((currentMusic !== null) && (currentMusic.src.split("/").pop()  === musicUrl.split("/").pop())){
         // console.log(currentMusic)
-        console.log(currentMusic + " This is currentMusic Val in first if");
+        // console.log(currentMusic + " This is currentMusic Val in first if");
         currentMusic.pause();
-        console.log("paused");
+        // console.log("paused");
         tempMusic = currentMusic;
         let opt = currentMusic.src.split("/").pop().split(".")[0];
         document.querySelector(`.i${opt}`).classList.remove("fa-circle-pause");
@@ -31,14 +31,14 @@ let playMusic = (musicUrl) => {
         return;
     }
     if (currentMusic) {
-        console.log(currentMusic + " This is currentMusic Val in second if");
+        // console.log(currentMusic + " This is currentMusic Val in second if");
 
         stopMusic(currentMusic);
     }
-    else if ((tempMusic  !==  null) && tempMusic.src.slice(-19, )  === musicUrl){
+    else if ((tempMusic  !==  null) && tempMusic.src.split("/").pop()  === musicUrl.split("/").pop()){
         tempMusic.play();
         // console.log("tempMusic");
-        console.log(tempMusic + " This is tempMusic Val");
+        // console.log(tempMusic + " This is tempMusic Val");
 
         let opt = tempMusic.src.split("/").pop().split(".")[0];
         document.querySelector(`.i${opt}`).classList.add("fa-circle-pause");
@@ -49,13 +49,13 @@ let playMusic = (musicUrl) => {
     }
         currentMusic = new Audio(musicUrl);
         currentMusic.play();
-        console.log(currentMusic + " This is currentMusic Val");
+        // console.log(currentMusic + " This is currentMusic Val");
         // Change the play button icon to "pause" when the song starts playing
         let opt = musicUrl.split("/").pop().split(".")[0];
         console.log(opt);
         document.querySelector(`.i${opt}`).classList.remove("fa-circle-play");
         document.querySelector(`.i${opt}`).classList.add("fa-circle-pause");
-        console.log(currentMusic);
+        // console.log(currentMusic);
 
         setTimeout(function(){
             stopMusic(currentMusic);
