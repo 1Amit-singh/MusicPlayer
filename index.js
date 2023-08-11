@@ -17,7 +17,8 @@ let stopMusic = (ele) => {
 };
 
 let playMusic = (musicUrl) => {
-    if ((currentMusic !== null) && (currentMusic.src.slice(22, ) === musicUrl)){
+    console.log(musicUrl)
+    if ((currentMusic !== null) && (currentMusic.src.slice(-19, )  === musicUrl)){
         // console.log(currentMusic)
         console.log(currentMusic + " This is currentMusic Val in first if");
         currentMusic.pause();
@@ -34,7 +35,7 @@ let playMusic = (musicUrl) => {
 
         stopMusic(currentMusic);
     }
-    else if ((tempMusic  !==  null) && tempMusic.src.slice(22, ) === musicUrl){
+    else if ((tempMusic  !==  null) && tempMusic.src.slice(-19, )  === musicUrl){
         tempMusic.play();
         // console.log("tempMusic");
         console.log(tempMusic + " This is tempMusic Val");
