@@ -7,7 +7,17 @@ let progressDiv = document.getElementById("progress-div");
 let progress = document.getElementById("progress");
 let rightPlayBtn = document.getElementById("right-play-btn");
 let rightCover = document.getElementById("right-cover");
+let menu = document.getElementById("menu");
+let menuOptions = document.getElementById("menu-options");
 
+
+menu.addEventListener("click", function(){
+    if(menuOptions.style.top !== "65px")
+        menuOptions.style.top = "65px";
+    else{
+        menuOptions.style.top = "-500px"
+    }
+});
 
 // Function to stop the currently playing song
 let stopMusic = (ele) => {

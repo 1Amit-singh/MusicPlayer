@@ -24,12 +24,23 @@
             <p>Account</p>
             </div>
             <!-- burger menu -->
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars menu" id="menu"></i>
         </div>
     </nav>
-
+    <div class="menu-options" id="menu-options">
+        <!-- icon Search -->
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <a href="#">New Releases</a>
+        <a href="#">News Feed</a>
+        <a href="#">Shuffle Play</a>
+    </div>
     <main class="main">
         <div class="main-left">
+            <div class="main-left-mob">
+                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-headphones"></i>
+                <i class="fa-solid fa-music"></i>
+            </div>
             <div class="main-left1">
                 <h1 class="main-left-h1">Browse Music</h1>
                 <div class="options-browse">
@@ -140,15 +151,17 @@
         <div class="main-right">
             <div class="dummy">
             <img id="right-cover" src="assets/Photos/1.png" alt="">
-            <div class="progress-bar-out" id="progress-div">
-                <div class="progress-bar-in" id="progress">
-                    
+            <div class="controls">
+                <div class="progress-bar-out" id="progress-div">
+                    <div class="progress-bar-in" id="progress">
+                        
+                    </div>
                 </div>
-            </div>
-            <div class="buttons">
-                <i class="fa-solid fa-backward-step"></i>
-                <i id="right-play-btn" class="fa-solid fa-play"></i>
-                <i class="fa-solid fa-forward-step"></i>
+                <div class="buttons">
+                    <i class="fa-solid fa-backward-step"></i>
+                    <i id="right-play-btn" class="fa-solid fa-play"></i>
+                    <i class="fa-solid fa-forward-step"></i>
+                </div>
             </div>
             </div>
         </div>
