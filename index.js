@@ -17,7 +17,7 @@ let stopMusic = (ele) => {
 };
 
 let playMusic = (musicUrl) => {
-    console.log(musicUrl)
+    // console.log(musicUrl)
     if ((currentMusic !== null) && (currentMusic.src.split("/").pop()  === musicUrl.split("/").pop())){
         // console.log(currentMusic)
         // console.log(currentMusic + " This is currentMusic Val in first if");
@@ -52,7 +52,7 @@ let playMusic = (musicUrl) => {
         // console.log(currentMusic + " This is currentMusic Val");
         // Change the play button icon to "pause" when the song starts playing
         let opt = musicUrl.split("/").pop().split(".")[0];
-        console.log(opt);
+        // console.log(opt);
         document.querySelector(`.i${opt}`).classList.remove("fa-circle-play");
         document.querySelector(`.i${opt}`).classList.add("fa-circle-pause");
         // console.log(currentMusic);
