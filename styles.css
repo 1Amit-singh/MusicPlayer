@@ -157,6 +157,29 @@ body{
     /* background-color: aqua; */
     width: 280px;
     height: 100%;
+
+}
+.progress-bar-out{
+    margin: 80px auto 50px auto;
+    height: 8px;
+    width: 250px;
+    background-color: rgba(84, 82, 82, 0.41);
+    border-radius: 30px;
+    padding: 2px;
+}
+.progress-bar-in{
+    background-color: #fff;
+    width: 0%;
+    height: 100%;
+    border-radius: 30px;
+    transition: all 0.5s linear;
+}
+.main-right .buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-size: 60px;
 }
 
 
