@@ -172,7 +172,7 @@ body{
     margin: 80px auto 50px auto;
     height: 8px;
     width: 250px;
-    background-color: rgba(109, 108, 108, 0.41);
+    background-color: rgba(135, 135, 135, 0.41);
     border-radius: 30px;
     padding: 2px;
 }
@@ -240,8 +240,7 @@ body{
         gap: 20px;
         z-index: 99;
         right: 10px;
-        opacity: 0;
-        top: 65px;
+        top: -500px;
         height: 200px;
         width: 60%;
         max-width: 250px;
@@ -249,7 +248,7 @@ body{
         border-radius: 10px;
         background-color: #353535;
         position: fixed;
-        transition: all .4s ease-in;
+        transition: all .7s ease-in;
     }
     .menu-options a{
         text-decoration: none;
@@ -317,10 +316,30 @@ body{
     }
     .dummy{
         padding: 20px 20px;
-        height: 150px;
+        height: 120px;
     }
     .dummy img{
         width: 80px;
         height: 80px;
     }
+    .main-left{
+        background-color: #030303dc;
+        bottom: 0;
+        height: 10px;
+        width: 100%;
+        z-index: 99;
+    }
+    .main-left-mob{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+    .main-right{
+        bottom: 60px;
+    }
+    .main-center{
+        margin-left: 30px;
+    }
+
 }

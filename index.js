@@ -12,10 +12,10 @@ let menuOptions = document.getElementById("menu-options");
 
 
 menu.addEventListener("click", function(){
-    if(menuOptions.style.opacity !== "1")
-        menuOptions.style.opacity = "1";
+    if(menuOptions.style.top !== "65px")
+        menuOptions.style.top = "65px";
     else{
-        menuOptions.style.opacity = "0"
+        menuOptions.style.top = "-500px"
     }
 });
 
