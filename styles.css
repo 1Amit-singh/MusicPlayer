@@ -190,7 +190,28 @@ body{
     gap: 50px;
     font-size: 60px;
 }
+.volume{
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px 30px;
+}
+.volume-bar{
+    width: 150px;
+    height: 7px;
+    background-color: #6b6b6b;
+    padding: 1px;
+    border-radius: 30px;
+}
+.volume-bar-inner{
+    width: 50%;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    transition: all 0.2s ease-in;
 
+}
 
 @media screen and (max-width:800px){
     *{
@@ -240,15 +261,17 @@ body{
         gap: 20px;
         z-index: 99;
         right: 10px;
-        top: -500px;
-        height: 200px;
-        width: 60%;
+        top: 65px;
+        height: 0px;
+        width: 0%;
+        opacity: 0;
         max-width: 250px;
-        padding: 30px 0px;
+        padding: 0px;
         border-radius: 10px;
         background-color: #353535;
         position: fixed;
-        transition: all .7s ease-in;
+        transition: all .3s ease-in-out;
+        overflow: hidden;
     }
     .menu-options a{
         text-decoration: none;
@@ -290,7 +313,19 @@ body{
         width: 100%;
         grid-template-columns: repeat(auto-fit, minmax(180px, .7fr));
     }
-
+    .volume{
+        align-self: flex-start;
+        width: 7px;
+        /* background-color: antiquewhite; */
+        flex-direction: column-reverse;
+        gap: 50px;
+        font-size: 20px;
+    }
+    .volume-bar{
+        width: 80px;
+        height: 7px;
+        transform: rotate(-90deg);
+    }
     /* .main-left{
         padding: 0;
     } */
@@ -341,5 +376,17 @@ body{
     .main-center{
         margin-left: 30px;
     }
-
+    .volume{
+        align-self: flex-start;
+        width: 5px;
+        /* background-color: antiquewhite; */
+        flex-direction: column-reverse;
+        gap: 50px;
+        font-size: 15px;
+    }
+    .volume-bar{
+        width: 70px;
+        height: 7px;
+        transform: rotate(-90deg);
+    }
 }

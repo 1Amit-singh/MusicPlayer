@@ -9,15 +9,34 @@ let rightPlayBtn = document.getElementById("right-play-btn");
 let rightCover = document.getElementById("right-cover");
 let menu = document.getElementById("menu");
 let menuOptions = document.getElementById("menu-options");
-
+let volumeDiv = document.getElementById("volume-bar");
+let volumeBar = document.getElementById("volume-bar-inner");
 
 menu.addEventListener("click", function(){
-    if(menuOptions.style.top !== "65px")
-        menuOptions.style.top = "65px";
+    if (menuOptions.style.height){
+        menuOptions.style.height = "";
+        menuOptions.style.width = "";
+        menuOptions.style.padding = "";
+        menuOptions.style.opacity = "";
+    }
     else{
-        menuOptions.style.top = "-500px"
+        menuOptions.style.opacity = "1";
+        menuOptions.style.height = "200px";
+        menuOptions.style.width = "60%";
+        menuOptions.style.padding = "30px 0px";
     }
 });
+
+
+// Update volume
+volumeDiv.addEventListener("click", (e) => {
+    if (currentMusic) {
+        let volumeLevel = e.offsetX / volumeDiv.offsetWidth;
+        currentMusic.volume = volumeLevel;
+        volumeBar.style.width = volumeLevel * 100 + "%";
+    }
+});
+
 
 // Function to stop the currently playing song
 let stopMusic = (ele) => {
