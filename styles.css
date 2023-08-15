@@ -191,6 +191,9 @@ body{
     gap: 50px;
     font-size: 60px;
 }
+.buttons i {
+    cursor: pointer;
+}
 .volume{
     font-size: 25px;
     display: flex;
@@ -212,7 +215,6 @@ body{
     background-color: #ffffffd7;
     border-radius: 30px;
     transition: all 0.2s ease-in;
-
 }
 
 @media screen and (max-width:800px){
@@ -390,5 +392,20 @@ body{
         width: 70px;
         height: 7px;
         transform: rotate(-90deg);
+    }
+}
+
+@media screen and (max-width:370px){
+    h3{
+        font-size: 14px;
+    }
+    p{
+        font-size: 12px;
+    }
+    .songs{
+        /* background-color: aliceblue; */
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(120px, .7fr));
+        justify-content: center;
     }
 }

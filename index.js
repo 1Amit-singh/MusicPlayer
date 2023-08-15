@@ -11,6 +11,27 @@ let menu = document.getElementById("menu");
 let menuOptions = document.getElementById("menu-options");
 let volumeDiv = document.getElementById("volume-bar");
 let volumeBar = document.getElementById("volume-bar-inner");
+let prevBtn = document.getElementById("prev-btn");
+let nextBtn = document.getElementById("next-btn");
+let currentSongIndex = 0;
+
+
+// Logic for playing next song
+let playNext = () => {
+    currentSongIndex = (currentSongIndex + 1) % limit;
+    let musicUrl = `assets/Musics/${song[currentSongIndex].classList[1].split("s")[1]}.mp3`;
+    playMusic(musicUrl);
+}
+
+let playPrev = () => {
+    currentSongIndex = (currentSongIndex - 1 + limit) % limit;
+    let musicUrl = `assets/Musics/${song[currentSongIndex].classList[1].split("s")[1]}.mp3`;
+    playMusic(musicUrl);
+}
+
+nextBtn.addEventListener("click", playNext);
+prevBtn.addEventListener("click", playPrev);
+
 
 menu.addEventListener("click", function(){
     if (menuOptions.style.height){
