@@ -143,7 +143,7 @@ let playMusic = (musicUrl) => {
     let changeCover = (currentMusic) => {
         if(currentMusic){
             let num = currentMusic.src.split("/").pop().split(".")[0];
-            rightCover.src = `assets/Photos/${num}.png`; 
+            rightCover.src = `assets/Photos/${num}.webp`; 
             // console.log(rightCover, num)
         }
     }
