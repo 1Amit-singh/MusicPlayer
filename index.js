@@ -13,6 +13,7 @@ let volumeDiv = document.getElementById("volume-bar");
 let volumeBar = document.getElementById("volume-bar-inner");
 let prevBtn = document.getElementById("prev-btn");
 let nextBtn = document.getElementById("next-btn");
+let volumeIcon = document.getElementById("volume-icon");
 let currentSongIndex = 0;
 
 
@@ -48,6 +49,21 @@ menu.addEventListener("click", function(){
     }
 });
 
+//Mute Volume
+volumeIcon.addEventListener("click", () => {
+    if(volumeIcon.classList.contains("fa-volume-high")){
+        volumeIcon.classList.remove("fa-volume-high");
+        volumeIcon.classList.add("fa-volume-mute")
+        currentMusic.volume = 0;
+        volumeBar.style.width = "0%";
+    }
+    else{
+        volumeIcon.classList.add("fa-volume-high");
+        volumeIcon.classList.remove("fa-volume-mute")
+        currentMusic.volume = "0.8";
+        volumeBar.style.width = "80%";
+    }
+})
 
 // Update volume
 volumeDiv.addEventListener("click", (e) => {
