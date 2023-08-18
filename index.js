@@ -13,7 +13,7 @@ let volumeDiv = document.getElementById("volume-bar");
 let volumeBar = document.getElementById("volume-bar-inner");
 let prevBtn = document.getElementById("prev-btn");
 let nextBtn = document.getElementById("next-btn");
-let volumeIcon = document.getElementById("volume-icon");
+let volumeIcon = document.getElementById("volume-icon");         
 let currentSongIndex = 0;
 
 
@@ -126,6 +126,7 @@ let playMusic = (musicUrl) => {
     }
         currentMusic = new Audio(musicUrl);
         currentMusic.play();
+
         // console.log(currentMusic + " This is currentMusic Val");
         // Change the play button icon to "pause" when the song starts playing
         let opt = musicUrl.split("/").pop().split(".")[0];
@@ -134,7 +135,6 @@ let playMusic = (musicUrl) => {
         rightPlayBtn.classList.remove("fa-play");
         rightPlayBtn.classList.add("fa-pause");
         changeCover(currentMusic);
-
         if (currentMusic) {
 
 
@@ -149,10 +149,17 @@ let playMusic = (musicUrl) => {
             };
         }
 
+        currentMusic.addEventListener('canplaythrough', () => {
+            // Set a timeout to stop the music after its duration ends
+        console.log(currentMusic.duration)
 
-        setTimeout(function(){
-            stopMusic(currentMusic);
-        },180000);
+            setTimeout(() => {
+                if (currentMusic) {
+
+                    stopMusic(currentMusic);
+                }
+            }, currentMusic.duration * 1000); // Convert duration to milliseconds
+        });
     }
 
 
