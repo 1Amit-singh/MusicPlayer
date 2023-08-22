@@ -139,7 +139,7 @@ let playMusic = (musicUrl) => {
 
 
             progressDiv.onclick = function (e) {
-            console.log((e.offsetX / progressDiv.offsetWidth) * currentMusic.duration);
+            // console.log((e.offsetX / progressDiv.offsetWidth) * currentMusic.duration);
             currentMusic.currentTime = (e.offsetX / progressDiv.offsetWidth) * currentMusic.duration;
             };
 
@@ -148,18 +148,6 @@ let playMusic = (musicUrl) => {
             progress.style.width = percent + "%";
             };
         }
-
-        currentMusic.addEventListener('canplaythrough', () => {
-            // Set a timeout to stop the music after its duration ends
-        console.log(currentMusic.duration)
-
-            setTimeout(() => {
-                if (currentMusic) {
-
-                    stopMusic(currentMusic);
-                }
-            }, currentMusic.duration * 1000); // Convert duration to milliseconds
-        });
     }
 
 
@@ -182,7 +170,7 @@ let playMusic = (musicUrl) => {
         }
         else{
             currentMusic = new Audio("assets/Musics/1.mp3");
-            console.log(currentMusic)
+            // console.log(currentMusic)
             currentMusic.play();
         }
         updatePlayPauseIcon();
